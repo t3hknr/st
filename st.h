@@ -231,6 +231,7 @@ extern char *opt_line;
 extern char *opt_name;
 extern char *opt_title;
 extern int oldbutton;
+extern int usealtcolors;
 
 extern char *usedfont;
 extern double usedfontsize;
@@ -250,7 +251,9 @@ extern unsigned int cursorthickness;
 extern unsigned int blinktimeout;
 extern char termname[];
 extern const char *colorname[];
+extern const char *altcolorname[];
 extern size_t colornamelen;
+extern size_t altcolornamelen;
 extern unsigned int defaultfg;
 extern unsigned int defaultbg;
 extern unsigned int defaultcs;

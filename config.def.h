@@ -5,6 +5,24 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
+
+#define S_base03            "#002b36"
+#define S_base02            "#073642"
+#define S_base01            "#586e75"
+#define S_base00            "#657b83"
+#define S_base0             "#839496"
+#define S_base1             "#93a1a1"
+#define S_base2             "#eee8d5"
+#define S_base3             "#fdf6e3"
+#define S_yellow            "#b58900"
+#define S_orange            "#cb4b16"
+#define S_red               "#dc322f"
+#define S_magenta           "#d33682"
+#define S_violet            "#6c71c4"
+#define S_blue              "#268bd2"
+#define S_cyan              "#2aa198"
+#define S_green             "#859900"
+
 char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 int borderpx = 2;
 
@@ -84,26 +102,39 @@ static unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
-
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
-
+	/* solarized dark */
+	S_base02,  /*  0: black    */
+	S_red,  /*  1: red      */
+	S_green,  /*  2: green    */
+	S_yellow,  /*  3: yellow   */
+	S_blue,  /*  4: blue     */
+	S_magenta,  /*  5: magenta  */
+	S_cyan,  /*  6: cyan     */
+	S_base2,  /*  7: white    */
+	S_base03,  /*  8: brblack  */
+	S_orange,  /*  9: brred    */
+	S_base01,  /* 10: brgreen  */
+	S_base00,  /* 11: bryellow */
+	S_base0,  /* 12: brblue   */
+	S_violet,  /* 13: brmagenta*/
+	S_base1,  /* 14: brcyan   */
+	S_base3,  /* 15: brwhite  */
+        [33] = S_blue,
+        [37] = S_cyan,
+        [61] = S_violet,
+        [64] = S_green,
+        [125] = S_magenta,
+        [136] = S_yellow,
+        [160] = S_red,
+        [166] = S_orange,
+        [230] = S_base3,
+        [234] = S_base03,
+        [235] = S_base02,
+        [240] = S_base01,
+        [241] = S_base00,
+        [244] = S_base0,
+        [245] = S_base1,
+        [254] = S_base2,
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
@@ -111,15 +142,55 @@ const char *colorname[] = {
 	"#555555",
 };
 
+/* Terminal colors for alternate (light) palette */
+const char *altcolorname[] = {
+	/* solarized light */
+	S_base2,  /*  0: black    */
+	S_red,  /*  1: red      */
+	S_green,  /*  2: green    */
+	S_yellow,  /*  3: yellow   */
+	S_blue,  /*  4: blue     */
+	S_magenta,  /*  5: magenta  */
+	S_cyan,  /*  6: cyan     */
+	S_base02,  /*  7: white    */
+	S_base3,  /*  8: brblack  */
+	S_orange,  /*  9: brred    */
+	S_base1,  /* 10: brgreen  */
+	S_base0,  /* 11: bryellow */
+	S_base00,  /* 12: brblue   */
+	S_violet,  /* 13: brmagenta*/
+	S_base01,  /* 14: brcyan   */
+	S_base03,  /* 15: brwhite  */
+        [33] = S_blue,
+        [37] = S_cyan,
+        [61] = S_violet,
+        [64] = S_green,
+        [125] = S_magenta,
+        [136] = S_yellow,
+        [160] = S_red,
+        [166] = S_orange,
+        [230] = S_base3,
+        [234] = S_base03,
+        [235] = S_base02,
+        [240] = S_base01,
+        [241] = S_base00,
+        [244] = S_base0,
+        [245] = S_base1,
+        [254] = S_base2,
+
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#cccccc",
+	"#555555",
+};
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
-unsigned int defaultcs = 256;
-unsigned int defaultrcs = 257;
+unsigned int defaultfg = 12;
+unsigned int defaultbg = 8;
+unsigned int defaultcs = 14;
+unsigned int defaultrcs = 15;
 
 /*
  * Default shape of cursor
@@ -178,6 +249,7 @@ Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
+	{ TERMMOD,              XK_F6,          swapcolors,     {.i =  0} },
 };
 
 /*
