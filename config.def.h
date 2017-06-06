@@ -25,6 +25,23 @@ static int borderpx = 2;
 #define S_cyan              "#2aa198"
 #define S_green             "#859900"
 
+#define J_black             "#001e27"
+#define J_blackL            "#002831"
+#define J_red               "#dc322f"
+#define J_redL              "#db7070"
+#define J_green             "#859900"
+#define J_greenL            "#94b979"
+#define J_yellow            "#b58900"
+#define J_yellowL           "#ffe7a0"
+#define J_blue              "#268bd2"
+#define J_blueL             "#97bedc"
+#define J_magenta           "#c61c6f"
+#define J_magentaL          "#e1c0fa"
+#define J_cyan              "#2aa198"
+#define J_cyanL             "#6eb2ae"
+#define J_white             "#eae3cb"
+#define J_whiteL            "#fcf4dc"
+
 /*
  * What program is execed by st depends of these precedence rules:
  * 1: program passed with -e
@@ -102,24 +119,24 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	J_black,
+	J_red,
+	J_green,
+	J_yellow,
+	J_blue,
+	J_magenta,
+	J_cyan,
+	J_white,
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	J_blackL,
+	J_redL,
+	J_greenL,
+	J_yellowL,
+	J_blueL,
+	J_magentaL,
+	J_cyanL,
+	J_whiteL,
 
         [33] = S_blue,
         [37] = S_cyan,
@@ -147,24 +164,24 @@ static const char *colorname[] = {
 /* Terminal colors for alternate (light) palette */
 const char *altcolorname[] = {
 	/* 8 normal colors */
-	"white",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	J_white,
+	J_red,
+	J_green,
+	J_yellow,
+	J_blue,
+	J_magenta,
+	J_cyan,
+	J_black,
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"black",
+	J_whiteL,
+	J_redL,
+	J_greenL,
+	J_yellowL,
+	J_blueL,
+	J_magentaL,
+	J_cyanL,
+	J_blackL,
 
         [33] = S_blue,
         [37] = S_cyan,
