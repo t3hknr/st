@@ -23,8 +23,8 @@
 #define S_cyan              "#2aa198"
 #define S_green             "#859900"
 
-#define J_black             "#001e27"
-#define J_blackL            "#002831"
+#define J_black             "#002b36"
+#define J_blackL            "#073642"
 #define J_red               "#dc322f"
 #define J_redL              "#db7070"
 #define J_green             "#859900"
@@ -37,8 +37,8 @@
 #define J_magentaL          "#e1c0fa"
 #define J_cyan              "#2aa198"
 #define J_cyanL             "#6eb2ae"
-#define J_white             "#eae3cb"
-#define J_whiteL            "#fcf4dc"
+#define J_white             "#fdf6e3"
+#define J_whiteL            "#eee8d5"
 
 char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 int borderpx = 2;
