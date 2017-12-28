@@ -40,7 +40,7 @@
 #define J_white             "#fdf6e3"
 #define J_whiteL            "#eee8d5"
 
-char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+char font[] = "Monaco:pixelsize=13:antialias=true:autohint=true";
 int borderpx = 2;
 
 /*
