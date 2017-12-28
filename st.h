@@ -19,6 +19,9 @@
 
 #define TRUECOLOR(r,g,b)	(1 << 24 | (r) << 16 | (g) << 8 | (b))
 #define IS_TRUECOL(x)		(1 << 24 & (x))
+#define TLINE(y)		((y) < term.scr ? term.hist[((y) + term.histi - term.scr \
+				+ histsize + 1) % histsize] : term.line[(y) - term.scr])
+#define histsize 2000
 
 enum glyph_attribute {
 	ATTR_NULL       = 0,
@@ -113,6 +116,9 @@ typedef struct {
 	int row;      /* nb row */
 	int col;      /* nb col */
 	Line *line;   /* screen */
+	Line hist[histsize]; /* history buffer */
+	int histi;    /* history index */
+	int scr;      /* scroll back */
 	Line *alt;    /* alternate screen */
 	int *dirty;  /* dirtyness of lines */
 	GlyphFontSpec *specbuf; /* font spec buffer used for rendering */
