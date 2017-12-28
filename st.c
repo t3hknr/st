@@ -646,6 +646,12 @@ selclear(void)
 }
 
 void
+swapcolors(const Arg *dummy)
+{
+	xswapcolors();
+}
+
+void
 die(const char *errstr, ...)
 {
 	va_list ap;
