@@ -138,6 +138,7 @@ static void printscreen(const Arg *) ;
 static void iso14755(const Arg *);
 static void toggleprinter(const Arg *);
 static void sendbreak(const Arg *);
+static void swapcolors(const Arg *);
 
 /* config.h for applying patches and the configuration. */
 #include "config.h"
@@ -218,6 +219,7 @@ char *opt_line  = NULL;
 char *opt_name  = NULL;
 char *opt_title = NULL;
 int oldbutton   = 3; /* button event on startup: 3 = release */
+int usealtcolors = 0;
 
 static CSIEscape csiescseq;
 static STREscape strescseq;
@@ -234,6 +236,7 @@ static Rune utfmax[UTF_SIZ + 1] = {0x10FFFF, 0x7F, 0x7FF, 0xFFFF, 0x10FFFF};
 
 /* config.h array lengths */
 size_t colornamelen = LEN(colorname);
+size_t altcolornamelen = LEN(altcolorname);
 size_t mshortcutslen = LEN(mshortcuts);
 size_t shortcutslen = LEN(shortcuts);
 size_t selmaskslen = LEN(selmasks);
@@ -644,6 +647,12 @@ void
 clipcopy(const Arg *dummy)
 {
 	xclipcopy();
+}
+
+void
+swapcolors(const Arg *dummy)
+{
+	xswapcolors();
 }
 
 void

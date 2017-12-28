@@ -28,3 +28,4 @@ void xresize(int, int);
 void xselpaste(void);
 unsigned long xwinid(void);
 void xsetsel(char *, Time);
+void xswapcolors(void);
